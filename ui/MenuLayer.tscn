@@ -1,0 +1,76 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Koko/Koko/Logo.png" type="Texture" id=1]
+[ext_resource path="res://ui/MenuLayer.gd" type="Script" id=2]
+[ext_resource path="res://Koko/font/fontt.tres" type="DynamicFont" id=3]
+
+[node name="MenuLayer" type="CanvasLayer"]
+script = ExtResource( 2 )
+
+[node name="StartMenu" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="StartMessage" type="TextureRect" parent="StartMenu"]
+anchor_right = 1.0
+margin_left = -5.0
+margin_top = 2.0
+margin_right = 1015.0
+margin_bottom = 1194.0
+rect_scale = Vector2( 0.5, 0.5 )
+size_flags_stretch_ratio = 0.0
+texture = ExtResource( 1 )
+stretch_mode = 1
+
+[node name="StartLabel" type="Label" parent="StartMenu"]
+margin_left = 236.0
+margin_top = 528.0
+margin_right = 815.0
+margin_bottom = 591.0
+custom_fonts/font = ExtResource( 3 )
+text = "Press anywhere to start"
+align = 1
+valign = 2
+
+[node name="GameOverMenu" type="Control" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GameOverMenu"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -203.0
+margin_top = -142.0
+margin_right = 203.0
+margin_bottom = 178.0
+custom_constants/separation = 20
+
+[node name="ScoreLabel" type="Label" parent="GameOverMenu/VBoxContainer"]
+margin_right = 406.0
+margin_bottom = 63.0
+custom_fonts/font = ExtResource( 3 )
+text = "SCORE   0"
+align = 1
+
+[node name="HighScoreLabel" type="Label" parent="GameOverMenu/VBoxContainer"]
+margin_top = 83.0
+margin_right = 406.0
+margin_bottom = 146.0
+custom_fonts/font = ExtResource( 3 )
+text = "BEST   0"
+align = 1
+
+[node name="RestartButton" type="Button" parent="GameOverMenu/VBoxContainer"]
+margin_top = 166.0
+margin_right = 406.0
+margin_bottom = 266.0
+rect_min_size = Vector2( 0, 100 )
+custom_fonts/font = ExtResource( 3 )
+text = "RESTART"
+
+[node name="Tween" type="Tween" parent="."]
+
+[connection signal="pressed" from="GameOverMenu/VBoxContainer/RestartButton" to="." method="_on_RestartButton_pressed"]

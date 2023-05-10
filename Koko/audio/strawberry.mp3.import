@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/strawberry.mp3-545da157dc662e6990281d85fbcbaaa4.mp3str"
+
+[deps]
+
+source_file="res://Koko/audio/strawberry.mp3"
+dest_files=[ "res://.import/strawberry.mp3-545da157dc662e6990281d85fbcbaaa4.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

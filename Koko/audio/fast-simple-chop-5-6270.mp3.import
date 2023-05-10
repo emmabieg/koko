@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/fast-simple-chop-5-6270.mp3-8d38a50300f8cf06ed298317e7ba581c.mp3str"
+
+[deps]
+
+source_file="res://Koko/audio/fast-simple-chop-5-6270.mp3"
+dest_files=[ "res://.import/fast-simple-chop-5-6270.mp3-8d38a50300f8cf06ed298317e7ba581c.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Koko/font/fontt.tres" type="DynamicFont" id=1]
+[ext_resource path="res://ui/HUD.gd" type="Script" id=2]
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_horizontal_guides_": [ 0.0 ]
+}
+
+[node name="Score" type="Label" parent="."]
+anchor_right = 1.0
+margin_bottom = 150.0
+size_flags_stretch_ratio = 0.0
+custom_fonts/font = ExtResource( 1 )
+text = "0"
+align = 1
+valign = 1

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/space.mp3-8d348f47a80ed7435b468cff5dfe8274.mp3str"
+
+[deps]
+
+source_file="res://Koko/audio/space.mp3"
+dest_files=[ "res://.import/space.mp3-8d348f47a80ed7435b468cff5dfe8274.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

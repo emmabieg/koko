@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/sky1.mp3-a2c098b3c6812cfeb9d10d007a5c8c5b.mp3str"
+
+[deps]
+
+source_file="res://Koko/audio/sky1.mp3"
+dest_files=[ "res://.import/sky1.mp3-a2c098b3c6812cfeb9d10d007a5c8c5b.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

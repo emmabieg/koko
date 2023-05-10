@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/wing-flap-1-6434.mp3-edbf6a999cf9defdf9c176b1f58161c0.mp3str"
+
+[deps]
+
+source_file="res://Koko/audio/wing-flap-1-6434.mp3"
+dest_files=[ "res://.import/wing-flap-1-6434.mp3-edbf6a999cf9defdf9c176b1f58161c0.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
