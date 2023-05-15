@@ -10,6 +10,7 @@ onready var enemy2 = $Enemy2
 onready var enemy3 = $Enemy3
 onready var finish = $Finish
 onready var koko = $Koko
+onready var music = $Music
 
 const SAVE_FILE_PATH = "user://savedata.save"
 
@@ -35,8 +36,7 @@ func new_game():
 	enemy.start()
 	enemy2.start()
 	enemy3.start()
-	
-	print("new game")
+	music.play()
 
 func player_score():
 	ScoreManager.score += 1
@@ -49,10 +49,12 @@ func player_unscore():
 
 func level_up():
 	emit_signal("level_completed")
+	music.stop()
 	if ScoreManager.score > highscore:
 		highscore = ScoreManager.score
 		save_highscore()
 	menu_layer.init_game_over_menu(ScoreManager.score,highscore)
+	
 
 func _on_MenuLayer_start_game():
 	new_game()

@@ -27,7 +27,7 @@ onready var meow = $Meow
 #This is a fuction for player movement 
 func get_input(delta): 
 	velocity.x = 0 
-	if !stopped:
+	if !stopped and started:
 		#This is for the player to move right
 		if Input.is_action_pressed("right"):
 			velocity.x += speed

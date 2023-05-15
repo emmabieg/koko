@@ -10,12 +10,21 @@
 [node name="ParallaxBackground" type="ParallaxBackground"]
 scroll_ignore_camera_zoom = true
 
-[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+[node name="ParallaxLayer1" type="ParallaxLayer" parent="."]
 motion_scale = Vector2( 0, 1 )
 motion_mirroring = Vector2( 1175, 0 )
 
-[node name="Sprite" type="Sprite" parent="ParallaxLayer"]
+[node name="Sprite" type="Sprite" parent="ParallaxLayer1"]
 position = Vector2( 512, 300 )
+scale = Vector2( 0.5, 0.44 )
+texture = ExtResource( 1 )
+region_rect = Rect2( 0, 0, 2355, 1640 )
+
+[node name="ParallaxLayer11" type="ParallaxLayer" parent="."]
+motion_mirroring = Vector2( 1175, 300 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxLayer11"]
+position = Vector2( 512, 0 )
 scale = Vector2( 0.5, 0.44 )
 texture = ExtResource( 1 )
 region_rect = Rect2( 0, 0, 2355, 1640 )

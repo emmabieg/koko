@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://environments/Ground.tscn" type="PackedScene" id=1]
 [ext_resource path="res://environments/Koko.tscn" type="PackedScene" id=2]
@@ -8,9 +8,12 @@
 [ext_resource path="res://environments/Enemy.tscn" type="PackedScene" id=6]
 [ext_resource path="res://ui/HUD.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Level1.gd" type="Script" id=8]
+[ext_resource path="res://Koko/audio/artificially-flavored-candy-glbml-99294.mp3" type="AudioStream" id=9]
 [ext_resource path="res://environments/Finish.tscn" type="PackedScene" id=10]
 [ext_resource path="res://environments/Strawberry Run.tscn" type="PackedScene" id=11]
-[ext_resource path="res://environments/Pillar.tscn" type="PackedScene" id=12]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 27.5, 151 )
 
 [node name="main" type="Node2D"]
 script = ExtResource( 8 )
@@ -24,25 +27,20 @@ offset = Vector2( 0, -50 )
 scale = Vector2( 1.3, 1.3 )
 transform = Transform2D( 1.3, 0, 0, 1.3, 0, -50 )
 
-[node name="Pillar" parent="." instance=ExtResource( 12 )]
-show_behind_parent = true
-position = Vector2( -676, 425 )
-scale = Vector2( 0.5, 0.5 )
-
 [node name="Platform" parent="." instance=ExtResource( 4 )]
-position = Vector2( 216, 582 )
+position = Vector2( -62, 681 )
 
 [node name="Platform2" parent="." instance=ExtResource( 4 )]
-position = Vector2( 483, 502 )
+position = Vector2( 243, 551 )
 
 [node name="Platform3" parent="." instance=ExtResource( 4 )]
-position = Vector2( 1971, 564 )
+position = Vector2( 1835, 666 )
 
 [node name="Platform4" parent="." instance=ExtResource( 4 )]
-position = Vector2( 5073, 586 )
+position = Vector2( 5067, 669 )
 
 [node name="Koko" parent="." instance=ExtResource( 2 )]
-position = Vector2( -21, 639 )
+position = Vector2( -673, 336 )
 scale = Vector2( 0.8, 0.8 )
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="Koko"]
@@ -50,10 +48,10 @@ position = Vector2( 20, -210 )
 remote_path = NodePath("../../Camera2D")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2( -5, 471 )
+position = Vector2( -657, 168 )
 scale = Vector2( 0.8, 0.8 )
+offset = Vector2( 0, -30 )
 current = true
-zoom = Vector2( 0.8, 0.8 )
 process_mode = 0
 drag_margin_h_enabled = true
 drag_margin_v_enabled = true
@@ -62,23 +60,37 @@ drag_margin_top = 1.0
 drag_margin_bottom = 0.0
 
 [node name="Enemy" parent="." instance=ExtResource( 6 )]
-position = Vector2( 787, 605 )
+position = Vector2( 719, 709 )
 
 [node name="Enemy2" parent="." instance=ExtResource( 6 )]
-position = Vector2( 3730, 457 )
+position = Vector2( 2616, 710 )
 
 [node name="Enemy3" parent="." instance=ExtResource( 6 )]
-position = Vector2( 2789, 564 )
+position = Vector2( 3965, 630 )
+
+[node name="Start" parent="." instance=ExtResource( 10 )]
+light_mask = 5
+position = Vector2( -665, 602 )
+scale = Vector2( 1.5, 1.5 )
+z_index = -99
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Start"]
+position = Vector2( -92.6667, -222 )
+scale = Vector2( 0.666667, 0.666667 )
+shape = SubResource( 1 )
 
 [node name="Finish" parent="." instance=ExtResource( 10 )]
 light_mask = 5
-position = Vector2( 5490, 572 )
+position = Vector2( 5507, 667 )
 z_index = -99
 
 [node name="Ground" parent="." instance=ExtResource( 1 )]
-position = Vector2( -131, 316 )
+position = Vector2( -168, 426 )
 
 [node name="Strawberry Run" parent="." instance=ExtResource( 11 )]
-position = Vector2( 1812, 723 )
+position = Vector2( 1674, 859 )
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 9 )
 
 [connection signal="start_game" from="MenuLayer" to="." method="_on_MenuLayer_start_game"]

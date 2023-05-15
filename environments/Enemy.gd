@@ -10,6 +10,7 @@ var started = false
 
 onready var l_ray = $l_ray
 onready var d_ray = $d_ray
+onready var animated_sprite = $Sprite
 
 func _physics_process(delta):
 	
@@ -24,6 +25,7 @@ func move():
 		movement.y +=GRAVITY
 		movement.x = -speed if moving_left else speed
 		movement = move_and_slide(movement,Vector2.UP)
+		animated_sprite.play("fly")
 
 
 func start():
