@@ -1,14 +1,19 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://environments/Enemy.gd" type="Script" id=1]
 [ext_resource path="res://Koko/Koko/Evil_Koko.png" type="Texture" id=2]
 
 [sub_resource type="CapsuleShape2D" id=1]
-radius = 18.0
+radius = 19.0
 height = 18.0
 
-[sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 7, 23 )
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 20.0
+height = 0.0
+
+[sub_resource type="CapsuleShape2D" id=3]
+radius = 13.0
+height = 4.0
 
 [node name="Enemy" type="KinematicBody2D"]
 script = ExtResource( 1 )
@@ -24,14 +29,26 @@ shape = SubResource( 1 )
 
 [node name="l_ray" type="RayCast2D" parent="."]
 enabled = true
-cast_to = Vector2( -50, 0 )
+cast_to = Vector2( -26, 0 )
+
+[node name="d_ray" type="RayCast2D" parent="."]
+position = Vector2( -19, 0 )
+enabled = true
+cast_to = Vector2( 0, 34 )
 
 [node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
 
 [node name="Hitbox" type="Area2D" parent="." groups=["hitbox"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
-position = Vector2( -17, -1 )
+position = Vector2( 0, 3 )
 shape = SubResource( 2 )
 
-[connection signal="body_entered" from="Hitbox" to="." method="_on_Hurtbox_body_entered"]
+[node name="DieZone" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DieZone"]
+position = Vector2( 0, -22 )
+rotation = 1.5708
+shape = SubResource( 3 )
+
+[connection signal="body_entered" from="DieZone" to="." method="_on_DieZone_body_entered"]

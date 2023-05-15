@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Koko/Koko/Wolkensaule_2.png" type="Texture" id=1]
+[ext_resource path="res://environments/Finish.gd" type="Script" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 34, 128 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 88, 19 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 27.5, 1 )
+
+[node name="Finish" type="StaticBody2D"]
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 0.1, 0.1 )
+texture = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -1, 19 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2( 0, -129 )
+shape = SubResource( 2 )
+
+[node name="Goal" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Goal"]
+position = Vector2( -0.5, -149 )
+shape = SubResource( 3 )
+
+[connection signal="body_entered" from="Goal" to="." method="_on_Goal_body_entered"]

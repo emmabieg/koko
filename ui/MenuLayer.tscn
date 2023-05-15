@@ -28,7 +28,7 @@ margin_top = 528.0
 margin_right = 815.0
 margin_bottom = 591.0
 custom_fonts/font = ExtResource( 3 )
-text = "Press anywhere to start"
+text = "Press SPACE to start"
 align = 1
 valign = 2
 
