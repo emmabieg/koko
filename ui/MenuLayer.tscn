@@ -52,10 +52,11 @@ custom_constants/separation = 20
 margin_right = 406.0
 margin_bottom = 63.0
 custom_fonts/font = ExtResource( 3 )
-text = "SCORE   0"
+text = "FINAL SCORE   0"
 align = 1
 
 [node name="HighScoreLabel" type="Label" parent="GameOverMenu/VBoxContainer"]
+visible = false
 margin_top = 83.0
 margin_right = 406.0
 margin_bottom = 146.0

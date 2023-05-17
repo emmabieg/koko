@@ -23,6 +23,7 @@ func init_game_over_menu(score,highscore):
 	score_label.text = "SCORE   " + str(score)
 	high_score_label.text = "HIGHSCORE   " + str(highscore)
 	game_over_menu.visible = true
+	
 
 func _on_RestartButton_pressed():
 # warning-ignore:return_value_discarded

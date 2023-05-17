@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/game-level-complete-143022.mp3-226679fc03d73b9677f1016622b50fe8.mp3str"
+
+[deps]
+
+source_file="res://Koko/audio/game-level-complete-143022.mp3"
+dest_files=[ "res://.import/game-level-complete-143022.mp3-226679fc03d73b9677f1016622b50fe8.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

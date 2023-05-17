@@ -11,6 +11,7 @@ onready var enemy3 = $Enemy3
 onready var finish = $Finish
 onready var koko = $Koko
 onready var music = $Music
+onready var level_complete = $LevelComplete
 
 const SAVE_FILE_PATH = "user://savedata.save"
 
@@ -50,6 +51,7 @@ func player_unscore():
 func level_up():
 	emit_signal("level_completed")
 	music.stop()
+	level_complete.play()
 	if ScoreManager.score > highscore:
 		highscore = ScoreManager.score
 		save_highscore()

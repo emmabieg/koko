@@ -11,6 +11,7 @@ var started = false
 onready var l_ray = $l_ray
 onready var d_ray = $d_ray
 onready var animated_sprite = $Sprite
+onready var chop = $Chop
 
 func _physics_process(delta):
 	
@@ -34,4 +35,5 @@ func start():
 
 func _on_DieZone_body_entered(body):
 	if body is Koko:
+		chop.play()
 		queue_free()
